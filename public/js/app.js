@@ -1,13 +1,3 @@
-// fetch("http://localhost:3000/weather?address=##").then((response) => {
-//   response.json().then((data) => {
-//     if (data.error) {
-//       console.log(data.error);
-//     } else {
-//       console.log(data);
-//     }
-//   });
-// });
-
 const weatherForm = document.querySelector("form");
 const search = document.querySelector("input");
 const msgOne = document.querySelector("#msg-1");
@@ -23,7 +13,7 @@ weatherForm.addEventListener("submit", (e) => {
   msgOne.textContent = "Loading weather info....";
   msgTwo.textContent = "";
 
-  fetch(`http://localhost:3000/weather?address=${location}`).then((res) => {
+  fetch(`/weather?address=${location}`).then((res) => {
     res.json().then((data) => {
       if (data.error) {
         msgTwo.textContent = data.error;
