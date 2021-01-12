@@ -10,7 +10,13 @@ const forecast = (location, callback) => {
     } else {
       callback(
         undefined,
-        `Forecast is ${body.current.weather_descriptions[0]}, current temperature is ${body.current.temperature} degrees, though it feels like ${body.current.feelslike} degrees`
+        `Forecast is ${
+          body.current.weather_descriptions[0]
+        }, current temperature is ${
+          body.current.temperature
+        } degrees, though it feels like ${
+          body.current.feelslike
+        } degrees. ${new Date(body.location.localtime)}`
       );
     }
   });
